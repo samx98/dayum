@@ -6,242 +6,30 @@
     <link rel="apple-touch-icon" type="image/png" href="assets/tulip-favicon.png" />
     <meta name="apple-mobile-web-app-title" content="CodePen">
     <link rel="shortcut icon" type="image/x-icon" href="assets/tulip-favicon.ico" />
-    <title>uff, kaatil.</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <title>Prologue</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: sans-serif;
-            background-color: #000;
-            position: relative;
+            background: black;
         }
 
-        /* ---- grid ---- */
-        /* clearfix */
-        .grid:after {
-            content: '';
-            display: block;
-            clear: both;
+        span {
+            color: yellow;
+            font-family: monospace;
         }
 
-        /* ---- grid-item ---- */
-        .grid-sizer,
-        .grid-item {
-            width: 25%;
+        .blinker {
+            opacity: 1;
+            margin-bottom: -2px;
+            height: 15px;
+            margin-left: -5px;
+            border-left: 7px solid yellow;
+            animation: blinker 0.9s steps(2, start) infinite;
         }
 
-        .grid-item {
-            height: 200px;
-            float: left;
-            background-color: #F4F3F4;
-            border: 4px solid #000;
-            filter: grayscale(70%) blur(0.5px);
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            background-image: url(https://unsplash.it/900/900);
-            background-size: cover;
-            background-position: center center;
-            transition: all 0.35s ease-in-out;
-        }
-
-        .grid-item:hover {
-            cursor: pointer;
-            filter: grayscale(0%) blur(0);
-        }
-
-        .grid-alpha {
-            display: none;
-            position: absolute;
-            background-color: #F4F3F4;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            text-align: center;
-        }
-
-        .grid-alpha:hover {
-            cursor: zoom-out;
-        }
-
-        .grid-item.item-opened {
-            width: 80%;
-            height: 80vw;
-            border: 3px solid #e8e8e8;
-            filter: grayscale(0%) blur(0);
-        }
-
-        .grid-item--width2 {
-            width: 50%;
-        }
-
-        .grid-item--height2 {
-            height: 400px;
-        }
-
-        .grid-item--height3 {
-            height: 600px;
-        }
-
-        @media only screen and (max-width: 580px) {
-            .grid-item {
-                width: 50%;
+        @keyframes blinker {
+            to {
+                visibility: hidden;
             }
-
-            .grid-item--width2 {
-                width: 100%;
-            }
-        }
-
-        .grid-item:nth-child(1) {
-            background-image: url("assets/grid/1.jpeg");
-        }
-
-        .grid-item:nth-child(2) {
-            background-image: url("assets/grid/3.jpg");
-        }
-
-        .grid-item:nth-child(3) {
-            background-image: url("assets/grid/2-min.jpg");
-        }
-
-        .grid-item:nth-child(4) {
-            background-image: url("assets/grid/13.jpeg");
-        }
-
-        .grid-item:nth-child(5) {
-            background-image: url("assets/grid/9.jpg");
-        }
-
-        .grid-item:nth-child(6) {
-            background-image: url("assets/grid/14-min.jpg");
-        }
-
-        .grid-item:nth-child(7) {
-            background-image: url("assets/grid/6.jpg");
-        }
-
-        .grid-item:nth-child(8) {
-            background-image: url("assets/grid/4-min.jpg");
-        }
-
-        .grid-item:nth-child(9) {
-            background-image: url("assets/grid/18.jpg");
-        }
-
-        .grid-item:nth-child(10) {
-            background-image: url("assets/grid/7-min.jpeg");
-        }
-
-        .grid-item:nth-child(11) {
-            background-image: url("assets/grid/15.jpg");
-        }
-
-        .grid-item:nth-child(12) {
-            background-image: url("assets/grid/1.jpeg");
-        }
-
-        .grid-item:nth-child(13) {
-            background-image: url("assets/grid/22-min.jpeg");
-        }
-
-        .grid-item:nth-child(14) {
-            background-image: url("assets/grid/10.jpg");
-        }
-
-        .grid-item:nth-child(15) {
-            background-image: url("assets/grid/5.gif");
-        }
-
-        .grid-item:nth-child(16) {
-            background-image: url("assets/grid/12-min.jpg");
-        }
-
-        .grid-item:nth-child(17) {
-            background-image: url("assets/grid/25.png");
-        }
-
-        .grid-item:nth-child(18) {
-            background-image: url("assets/grid/30.jpg");
-        }
-
-        .grid-item:nth-child(19) {
-            background-image: url("assets/grid/17.jpg");
-        }
-
-        .grid-item:nth-child(20) {
-            background-image: url("assets/grid/19-min.jpg");
-        }
-
-        .grid-item:nth-child(21) {
-            background-image: url("assets/grid/23-min.jpeg");
-        }
-
-        .grid-item:nth-child(22) {
-            background-image: url("assets/grid/29.gif");
-        }
-
-        .grid-item:nth-child(23) {
-            background-image: url("assets/grid/27.jpg");
-        }
-
-        .grid-item:nth-child(24) {
-            background-image: url("assets/grid/20.jpg");
-        }
-
-        .grid-item:nth-child(25) {
-            background-image: url("assets/grid/24-min.jpeg");
-        }
-
-        .grid-item:nth-child(26) {
-            background-image: url("assets/grid/16.gif");
-        }
-
-        .grid-item:nth-child(27) {
-            background-image: url("assets/grid/28.jpg");
-        }
-
-        .grid-item:nth-child(28) {
-            background-image: url("assets/grid/11.gif");
-        }
-
-        .grid-item:nth-child(29) {
-            background-image: url("assets/grid/21.jpg");
-        }
-
-        .grid-item:nth-child(30) {
-            background-image: url("assets/grid/26.jpg");
-        }
-
-        .grid-item:nth-child(31) {
-            background-image: url("assets/grid/31.gif");
-        }
-
-        .grid-item:nth-child(32) {
-            background-image: url("assets/grid/34.gif");
-        }
-
-        .grid-item:nth-child(33) {
-            background-image: url("assets/grid/33.jpg");
-        }
-
-        .grid-item:nth-child(34) {
-            background-image: url("assets/grid/36.jpg");
-        }
-
-        .grid-item:nth-child(35) {
-            background-image: url("assets/grid/37.jpg");
-        }
-
-        .grid-item:nth-child(36) {
-            background-image: url("assets/grid/35.jpg");
-        }
-
-        .grid-item:nth-child(37) {
-            background-image: url("assets/grid/32-min.jpg");
         }
     </style>
     <script>
@@ -252,201 +40,48 @@
             window.parent.postMessage("resize", "*");
         }
     </script>
-
-    <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script>
-        function audioVolumeIn(q) {
-            if (q.volume) {
-                var InT = 0;
-                var setVolume = 0.2; // Target volume level for new song
-                var speed = 0.005; // Rate of increase
-                q.volume = InT;
-                var eAudio = setInterval(function () {
-                    InT += speed;
-                    q.volume = InT.toFixed(1);
-                    if (InT.toFixed(1) >= setVolume) {
-                        clearInterval(eAudio);
-                        //alert('clearInterval eAudio'+ InT.toFixed(1));
-                    };
-                }, 50);
-            };
-        };
-
-        function audioVolumeOut(q) {
-            if (q.volume) {
-                var InT = 0.4;
-                var setVolume = 0; // Target volume level for old song 
-                var speed = 0.005; // Rate of volume decrease
-                q.volume = InT;
-                var fAudio = setInterval(function () {
-                    InT -= speed;
-                    q.volume = InT.toFixed(1);
-                    if (InT.toFixed(1) <= setVolume) {
-                        clearInterval(fAudio);
-                        //alert('clearInterval fAudio'+ InT.toFixed(1));
-                    };
-                }, 50);
-            };
-        };
-    </script> -->
-
-    <!-- <script>
-        window.onload = function () {
-            document.getElementById("audio").play();
-        }
-    </script> -->
-    <!-- <div style="visibility:hidden">
-        <audio id="audio" controls autoplay loop onPlay="audioVolumeIn(this);">
-            <source src="assets/lauv-lonely-eyes.mp3">
-        </audio>
-    </div> -->
-    <!-- <audio autoplay>
-        <source src="assets/lauv-lonely-eyes.mp3">
-    </audio> -->
 </head>
 
 <body translate="no">
-    <div class="grid">
-        <div class="grid-sizer"></div>
-        <div class="grid-item grid-item--width2 grid-item--height2">
-        </div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item grid-item--width3"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item grid-item--width2 grid-item--height3"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height2"></div>
-
-        <div class="grid-item"></div>
-
-        <div class="grid-item grid-item--width2 grid-item--height2"></div>
-        <div class="grid-item grid-item--width2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item" onclick="window.location.replace('smile.html');"></div>
-        <div class="grid-item grid-item--height3"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height3"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item grid-item--width2 grid-item--height2"></div>
-        <div class="grid-item grid-item--width2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--height2"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item grid-item--width2"></div>
-    </div>
-    <div class="grid-alpha"></div>
+    <span id="AboutDevTypeText" class="typeing"></span><span class='blinker'>&#32;</span>
     <script
         src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
     </script>
-    <script src='https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js'></script>
-    <script src='https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js'></script>
     <script id="rendered-js">
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            percentPosition: true
-        });
+        var data = [{
+            AboutDevTypeText: "<span>Hello Seeker of the Truth!<br/><br/>What is it that has led you to this quest?<br><br>I believe you are seeking something, something very special.</span><br/><br/><br/><br/><span>Everything is nothing and nothing is everything. Remember, Patience is the key.<br><br><br>With that, I enter you to a world of entanglement.<br><br>May you find your way to the divine fields where stands tall a sacred windmill.</span> &nbsp;"
+        }];
 
 
-        // Modal with transition
-        $('.grid-item').click(function (event) {
-            // Check if not already open
-            if (!$(this).hasClass('item-opened')) {
-                // Values
-                var elWidth = $(this).outerWidth() / 2;
-                var elPosition = this.getBoundingClientRect();
 
-                // Store position
-                $(this).attr('data-coord-left', $(this).css('left'));
-                $(this).attr('data-coord-top', $(this).css('top'));
+        var allElements = document.getElementsByClassName("typeing");
+        for (var j = 0; j < allElements.length; j++) {
+            if (window.CP.shouldStopExecution(0)) break;
+            var currentElementId = allElements[j].id;
+            var currentElementIdContent = data[0][currentElementId];
+            var element = document.getElementById(currentElementId);
+            var devTypeText = currentElementIdContent;
 
-                // Transition effect
-                $(this).css({
-                    top: elPosition.top,
-                    left: elPosition.left
-                }).
-                delay(400).css({
-                    top: '120px',
-                    left: '10%',
-                    zIndex: '99999'
-                    // marginLeft:	'-20%'
-                    // position: 'fixed'
-                }).addClass('item-opened');
-
-                $('.grid-alpha').fadeIn();
-
-                // Scroll to the top
-                $('html, body').animate({
-                        scrollTop: $('.grid').offset().top
-                    },
-                    650);
-                $('.grid').css('overflow', 'visible');
-            } else {
-                $('.grid').css('overflow', 'hidden');
-            }
-        });
-
-
-        // Close item Modal
-        $(document).on('click', function (e) {
-            if ($('.item-opened').length > 0) {
-                if (!$(e.target).closest('.grid-item').length && !$(e.target).hasClass('item-opened')) {
-                    $('.grid-alpha').fadeOut(650);
-
-                    $('.item-opened').css({
-                        top: $('.item-opened').data('coord-top'),
-                        left: $('.item-opened').data('coord-left'),
-                        marginLeft: ''
-                    });
-
-
-                    $('html, body').animate({
-                            scrollTop: $('.grid').offset().top + parseFloat($('.item-opened').data(
-                                'coord-top')) - 30
-                        },
-                        650);
-
-                    setTimeout(function () {
-                        $('.grid-item').css('z-index', '').removeClass('item-opened');
-                    }, 350);
-                    $('.grid').css('overflow', 'hidden');
-                }
-            }
-        });
-        //# sourceURL=pen.js
-    </script>
-        <script>
-            setTimeout(function () {
-                alert('Some patience pls! :/')
-            }, 5000)
-        setTimeout(function () {
-            alert('Just a reminder: Don\'t get lost in memories! The quest is not over yet.')
-        }, 200000)
-    </script>
-    <audio id="myAudio" autoplay loop>
-        <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
-    </audio>
-    <script>
-        function myFunction() {
-            window.onload = function () {
-                document.getElementById("myAudio").autoplay;
-            }
+            // type code
+            var i = 0,
+                isTag, text;
+            (function type() {
+                text = devTypeText.slice(0, ++i);
+                if (text === devTypeText) return;
+                element.innerHTML = text + `<span class='blinker'>&#32;</span>`;
+                var char = text.slice(-1);
+                if (char === "<") isTag = true;
+                if (char === ">") isTag = false;
+                if (isTag) return type();
+                setTimeout(type, 60);
+            })();
         }
+        window.CP.exitedLoop(0);
+        //# sourceURL=pen.js
     </script>
 </body>
 
 </html>
+
+
+<meta http-equiv="refresh" content="35; url=so-you-smart-xD.html" />
