@@ -173,7 +173,7 @@
         }
 
         .grid-item:nth-child(20) {
-            background-image: url("assets/grid/19-min.jpg");
+            background-image: url("assets/grid/38.jpg");
         }
 
         .grid-item:nth-child(21) {
@@ -243,6 +243,10 @@
         .grid-item:nth-child(37) {
             background-image: url("assets/grid/32-min.jpg");
         }
+
+        .grid-item:nth-child(38) {
+            background-image: url("assets/grid/19-min.jpg");
+        }
     </style>
     <script>
         window.console = window.console || function (t) {};
@@ -255,12 +259,10 @@
 </head>
 
 <body translate="no">
-    <audio id="myAudio" autoplay loop>
+    <audio id="myAudio" loop>
         <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
+            meow meow.
     </audio>
-    <script>
-        document.getElementById("myAudio").autoplay;
-    </script>
 
     <div class="grid">
         <div class="grid-sizer"></div>
@@ -302,7 +304,8 @@
         <div class="grid-item"></div>
         <div class="grid-item grid-item--height2"></div>
         <div class="grid-item"></div>
-        <div class="grid-item grid-item--width2"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
     </div>
     <div class="grid-alpha"></div>
     <script
@@ -389,6 +392,9 @@
         setTimeout(function () {
             alert('Just a reminder: Don\'t get lost in the memories! The quest is not over yet.')
         }, 150000)
+    </script>
+    <script>
+        document.getElementById("myAudio").autoplay;
     </script>
 </body>
 
