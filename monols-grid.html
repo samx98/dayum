@@ -306,6 +306,12 @@
 </head>
 
 <body translate="no">
+    <script>
+        document.getElementById("myAudio").autoplay;
+    </script>
+    <audio id="myAudio" autoplay loop preload="auto">
+        <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
+    </audio>
     <div class="grid">
         <div class="grid-sizer"></div>
         <div class="grid-item grid-item--width2 grid-item--height2">
@@ -349,9 +355,6 @@
         <div class="grid-item grid-item--width2"></div>
     </div>
     <div class="grid-alpha"></div>
-    <audio id="myAudio" autoplay loop>
-        <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
-    </audio>
     <script
         src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js">
     </script>
@@ -433,7 +436,6 @@
         //# sourceURL=pen.js
     </script>
     <script>
-        document.getElementById("myAudio").autoplay;
         setTimeout(function () {
             alert('Just a reminder: Don\'t get lost in the memories! The quest is not over yet.')
         }, 100000)
