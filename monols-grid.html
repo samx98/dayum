@@ -252,66 +252,16 @@
             window.parent.postMessage("resize", "*");
         }
     </script>
-
-    <!-- <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script>
-        function audioVolumeIn(q) {
-            if (q.volume) {
-                var InT = 0;
-                var setVolume = 0.2; // Target volume level for new song
-                var speed = 0.005; // Rate of increase
-                q.volume = InT;
-                var eAudio = setInterval(function () {
-                    InT += speed;
-                    q.volume = InT.toFixed(1);
-                    if (InT.toFixed(1) >= setVolume) {
-                        clearInterval(eAudio);
-                        //alert('clearInterval eAudio'+ InT.toFixed(1));
-                    };
-                }, 50);
-            };
-        };
-
-        function audioVolumeOut(q) {
-            if (q.volume) {
-                var InT = 0.4;
-                var setVolume = 0; // Target volume level for old song 
-                var speed = 0.005; // Rate of volume decrease
-                q.volume = InT;
-                var fAudio = setInterval(function () {
-                    InT -= speed;
-                    q.volume = InT.toFixed(1);
-                    if (InT.toFixed(1) <= setVolume) {
-                        clearInterval(fAudio);
-                        //alert('clearInterval fAudio'+ InT.toFixed(1));
-                    };
-                }, 50);
-            };
-        };
-    </script> -->
-
-    <!-- <script>
-        window.onload = function () {
-            document.getElementById("audio").play();
-        }
-    </script> -->
-    <!-- <div style="visibility:hidden">
-        <audio id="audio" controls autoplay loop onPlay="audioVolumeIn(this);">
-            <source src="assets/lauv-lonely-eyes.mp3">
-        </audio>
-    </div> -->
-    <!-- <audio autoplay>
-        <source src="assets/lauv-lonely-eyes.mp3">
-    </audio> -->
 </head>
 
 <body translate="no">
+    <audio id="myAudio" autoplay loop>
+        <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
+    </audio>
     <script>
         document.getElementById("myAudio").autoplay;
     </script>
-    <audio id="myAudio" autoplay loop preload="auto">
-        <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
-    </audio>
+
     <div class="grid">
         <div class="grid-sizer"></div>
         <div class="grid-item grid-item--width2 grid-item--height2">
