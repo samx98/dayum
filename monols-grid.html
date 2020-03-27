@@ -263,10 +263,15 @@
 </head>
 
 <body translate="no">
-    <audio id="myAudio" loop>
+
+    <audio id="myAudio" autoplay loop>
         <source src="assets/lauv-lonely-eyes.mp3" type="audio/mpeg">
-            meow meow.
     </audio>
+    <script>
+        function myFunction() {
+            document.getElementById("myAudio").autoplay;
+        }
+    </script>
 
     <div class="grid">
         <div class="grid-sizer"></div>
@@ -397,9 +402,6 @@
         setTimeout(function () {
             alert('Just a reminder: Don\'t get lost in the memories! The quest is not over yet.')
         }, 150000)
-    </script>
-    <script>
-        document.getElementById("myAudio").autoplay;
     </script>
 </body>
 
